@@ -6,8 +6,8 @@ Based on the AWS Blog: [Hosting Internal HTTPS Static Websites with ALB, S3, and
 
 ## Architecture
 Client (Private) --> Route53 PHZ(private hosted zone) --> ALB Internal --> S3 VPC Endpoint --> S3 Bucket
-                                                                |
-                                                            ACM Certificate
+.                                                                |
+.                                                            ACM Certificate
 
 
 ## Problem Solved
