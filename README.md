@@ -27,7 +27,7 @@ When accessing S3 through VPC Endpoint (REST API), requests to `/` return XML `L
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/alb-s3-privatelink-static-website.git
+git clone https://github.com/Cozobi/alb-s3-privatelink-static-website.git
 cd alb-s3-privatelink-static-website
 ```
 
