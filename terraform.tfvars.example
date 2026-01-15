@@ -1,0 +1,12 @@
+aws_region         = "us-east-1"
+domain_name        = "portal.example.com"
+vpc_id             = "vpc-xxxxxxxxx"
+private_subnet_ids = ["subnet-xxxxxxxx", "subnet-yyyyyyyy"]
+certificate_arn    = "arn:aws:acm:us-east-1:xxxxxxxxxxxx:certificate/xxxxxxxx"
+allowed_cidr_blocks = ["10.0.0.0/16"]
+
+tags = {
+  Environment = "dev"
+  Project     = "private-static-website"
+  ManagedBy   = "terraform"
+}
