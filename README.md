@@ -87,4 +87,6 @@ terraform destroy
 
 ## Important note
 Take in count that this architecture is designed for internal routing
-There won't be access from external resources, it is all within the private VPC
+There won't be access from external resources
+
+Unless you are connecting within the same VPC, with a VPN, Direct connect, etc.
