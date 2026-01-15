@@ -5,9 +5,8 @@ Terraform module to deploy a private HTTPS static website using AWS ALB, S3, and
 Based on the AWS Blog: [Hosting Internal HTTPS Static Websites with ALB, S3, and PrivateLink](https://aws.amazon.com/blogs/networking-and-content-delivery/hosting-internal-https-static-websites-with-alb-s3-and-privatelink/)
 
 ## Architecture
-Client (Private) --> Route53 PHZ(private hosted zone) --> ALB Internal --> S3 VPC Endpoint --> S3 Bucket
-.                                                                |
-.                                                            ACM Certificate
+
+![Architecture Diagram](https://d2908q01vomqb2.cloudfront.net/5b384ce32d8cdef02bc3a139d4cac0a22bb029e8/2023/01/06/Networking_NetCDNBlog-430-v2.jpg)
 
 
 ## Problem Solved
