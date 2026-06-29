@@ -27,7 +27,7 @@ resource "aws_s3_bucket_policy" "website" {
 
   policy = jsonencode({
     Version = "2012-10-17"
-    Statement = [
+    Statement = concat([
       {
         Sid       = "AllowVPCEndpointAccess"
         Effect    = "Allow"
@@ -40,7 +40,7 @@ resource "aws_s3_bucket_policy" "website" {
           }
         }
       }
-    ]
+    ], var.bucket_policy_additions)
   })
 
   depends_on = [aws_vpc_endpoint.s3]

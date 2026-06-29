@@ -35,3 +35,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "bucket_policy_additions" {
+  description = "Policy statements to add to the bucket policy"
+  type = list(any)
+  default = []
+}
