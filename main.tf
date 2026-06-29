@@ -46,14 +46,6 @@ resource "aws_s3_bucket_policy" "website" {
   depends_on = [aws_vpc_endpoint.s3]
 }
 
-resource "aws_s3_object" "index" {
-  bucket       = aws_s3_bucket.website.id
-  key          = "index.html"
-  source       = "${path.module}/website/index.html"
-  content_type = "text/html"
-  etag         = filemd5("${path.module}/website/index.html")
-}
-
 #######################################
 # Security Groups
 #######################################
