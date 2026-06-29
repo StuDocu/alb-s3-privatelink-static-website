@@ -1,5 +1,5 @@
 locals {
-  name_prefix = replace(var.domain_name, ".", "-")
+  name_prefix = substr(replace(var.domain_name, ".", "-"), 0, 20)
 }
 
 #######################################
