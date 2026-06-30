@@ -38,6 +38,18 @@ variable "tags" {
 
 variable "bucket_policy_additions" {
   description = "Policy statements to add to the bucket policy"
-  type = list(any)
-  default = []
+  type        = list(any)
+  default     = []
+}
+
+variable "create_hosted_zone" {
+  description = "Set to `true` to create a new hosted zone; otherwise reuse an existing one"
+  type        = bool
+  default     = false
+}
+
+variable "hosted_zone_name" {
+  description = "Name of the hosted zone to reuse if not creating a new one. Only used if `create_hosted_zone` is set to `false`."
+  type        = string
+  default     = ""
 }

@@ -1,4 +1,5 @@
 locals {
+  hosted_zone = var.create_hosted_zone ? aws_route53_zone.private[0] : data.aws_route53_zone.private[0]
   name_prefix = substr(replace(var.domain_name, ".", "-"), 0, 20)
 }
 
@@ -224,7 +225,8 @@ resource "aws_lb_listener_rule" "redirect_trailing_slash" {
 # Route53 Private Hosted Zone
 #######################################
 resource "aws_route53_zone" "private" {
-  name = join(".", slice(split(".", var.domain_name), 1, length(split(".", var.domain_name))))
+  count = var.create_hosted_zone ? 1 : 0
+  name  = join(".", slice(split(".", var.domain_name), 1, length(split(".", var.domain_name))))
 
   vpc {
     vpc_id = var.vpc_id
@@ -236,7 +238,7 @@ resource "aws_route53_zone" "private" {
 }
 
 resource "aws_route53_record" "website" {
-  zone_id = aws_route53_zone.private.zone_id
+  zone_id = local.hosted_zone.zone_id
   name    = var.domain_name
   type    = "A"
 

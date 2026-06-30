@@ -30,7 +30,7 @@ output "vpc_endpoint_ips" {
 
 output "private_hosted_zone_id" {
   description = "ID of the Route53 Private Hosted Zone"
-  value       = aws_route53_zone.private.zone_id
+  value       = local.hosted_zone.zone_id
 }
 
 output "website_url" {
